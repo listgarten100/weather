@@ -3,7 +3,7 @@
   width: 100%;
 
   &__inner{
-    padding: 30px 0 0 0;
+    padding: 6px 0 0 0;
     width: 100%;
   }
 
@@ -21,6 +21,10 @@
     margin-bottom: 20px;
     text-align: center;
     width: 320px;
+
+    // &:nth-child(3n) {
+    //   margin-bottom: 0;
+    // }
   }
 
   &__item-text{

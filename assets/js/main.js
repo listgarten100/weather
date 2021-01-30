@@ -1,5 +1,5 @@
 const month = 'Jan,Feb,March,Apr,May,June,July,Aug,Sep,October,Nov,Dec'.split(',');
-
+const article = document.createElement('div');
 class City{
   constructor(city, humidity, pressure, wind, temp, feelLike, cloud, img, parent) {
     this.city = city;
@@ -12,9 +12,7 @@ class City{
     this.img = img;
     this.parent = document.querySelector(parent);
   }
-
   render() {
-    let article = document.createElement('div');
     article.classList.add('weather-city');
     article.innerHTML = `<section class="main-desc">
     <div class="main-desc__inner">
@@ -45,33 +43,34 @@ class City{
   }
 }
 
+(function getData(city = 'KHARKOV') {
+  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=5d066958a60d315387d9492393935c19`)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    new City(
+      data.name,
+      data.main.humidity,
+      data.main.pressure,
+      data.wind.speed,
+      data.main.temp,
+      data.main.feels_like,
+      data.clouds.all,
+      data.weather[0].icon,
+      '.article'
+    ).render();
+    });
+}());
 
+const form = document.forms['form'];
+const input = form.elements['text'];
 
-fetch('http://api.openweathermap.org/data/2.5/weather?q=KAIR&units=metric&APPID=5d066958a60d315387d9492393935c19')
-.then(response => response.json())
-.then(data => {
-  console.log(data);
-  new City(
-    data.name,
-    data.main.humidity,
-    data.main.pressure,
-    data.wind.speed,
-    data.main.temp,
-    data.main.feels_like,
-    data.clouds.all,
-    data.weather[0].icon,
-    '.article'
-  ).render();
-  });
+form.addEventListener('submit', onSubmitFormHandler);
 
-
-// new City(
-//       'Kharkov',
-//       '70',
-//       '80',
-//       '90',
-//       '-2',
-//       '-10',
-//       '45',
-//       '.article'
-//     ).render();
+function onSubmitFormHandler(e){
+  e.preventDefault();
+  article.remove();
+  cityTitle = input.value.toUpperCase();
+  form.reset();
+  getData(cityTitle);
+}
