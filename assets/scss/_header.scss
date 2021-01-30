@@ -1,0 +1,25 @@
+.header {
+  position: relative;
+  width: 100%;
+
+  &__inner{
+    text-align: center;
+    width: 100%;
+    padding: 60px 0 0 0;
+  }
+
+  &__logo{
+    position: relative;
+  }
+
+  &__logo-text{
+    font-size: 100px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fcfcfc;
+  }
+
+  &__logo-text--orange{
+    color: rgb(243, 113, 7);
+  }
+  }

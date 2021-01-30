@@ -1,0 +1,40 @@
+.main-desc{
+  position: relative;
+  width: 100%;
+
+  &__inner{
+    position: relative;
+    padding: 110px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
+
+  &__img{
+    position: relative;
+    margin-right: 40px;
+  }
+
+  &__img-item{
+    position: relative;
+  }
+
+  &__list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item{
+    background-color: #3d3d3d;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__item-text{
+    font-size: 36px;
+    color: #fcfcfc;
+    padding: 10px 40px;
+  }
+}

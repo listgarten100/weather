@@ -1,0 +1,31 @@
+.desc{
+  position: relative;
+  width: 100%;
+
+  &__inner{
+    padding: 30px 0 0 0;
+    width: 100%;
+  }
+
+  &__list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 240px;
+    align-items: center;
+  }
+
+  &__item{
+    background-color: #3d3d3d;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 320px;
+  }
+
+  &__item-text{
+    font-size: 24px;
+    color: #fcfcfc;
+    padding: 10px 28px;
+  }
+}

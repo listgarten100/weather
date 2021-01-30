@@ -1,0 +1,300 @@
+/***************************************************              GENERAL RESET STYLES             ***************************************************/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  text-decoration: none;
+  background: transparent;
+  font-size: 100%;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+img {
+  max-width: 100%;
+  border-style: none;
+}
+
+form fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+input,
+textarea,
+select {
+  padding: 0;
+  vertical-align: middle;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+/* wrapper */
+.page {
+  position: relative;
+}
+
+.wrapper {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #000000;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/roboto-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/opensans-regular.woff2") format("woff2");
+}
+
+.header {
+  position: relative;
+  width: 100%;
+}
+
+.header__inner {
+  text-align: center;
+  width: 100%;
+  padding: 60px 0 0 0;
+}
+
+.header__logo {
+  position: relative;
+}
+
+.header__logo-text {
+  font-size: 100px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fcfcfc;
+}
+
+.header__logo-text--orange {
+  color: #f37107;
+}
+
+.main-desc {
+  position: relative;
+  width: 100%;
+}
+
+.main-desc__inner {
+  position: relative;
+  padding: 110px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-desc__img {
+  position: relative;
+  margin-right: 40px;
+}
+
+.main-desc__img-item {
+  position: relative;
+}
+
+.main-desc__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-desc__item {
+  background-color: #3d3d3d;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.main-desc__item-text {
+  font-size: 36px;
+  color: #fcfcfc;
+  padding: 10px 40px;
+}
+
+.desc {
+  position: relative;
+  width: 100%;
+}
+
+.desc__inner {
+  padding: 30px 0 0 0;
+  width: 100%;
+}
+
+.desc__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 240px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.desc__item {
+  background-color: #3d3d3d;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 320px;
+}
+
+.desc__item-text {
+  font-size: 24px;
+  color: #fcfcfc;
+  padding: 10px 28px;
+}
