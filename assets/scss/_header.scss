@@ -1,25 +1,30 @@
 .header {
   position: relative;
+  z-index: 2;
   width: 100%;
 
-  &__inner{
-    text-align: center;
+  &__inner {
     width: 100%;
     padding: 60px 0 0 0;
+
+    text-align: center;
   }
 
-  &__logo{
+  &__logo {
     position: relative;
   }
 
-  &__logo-text{
+  &__logo-text {
+    text-transform: uppercase;
+
+    color: #88b9d3fe;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: rgb(59, 59, 59) 4px 4px 5px;
     font-size: 100px;
     font-weight: 700;
-    text-transform: uppercase;
-    color: #fcfcfc;
   }
 
-  &__logo-text--orange{
-    color: rgb(243, 113, 7);
+  &__logo-text--orange {
+    color: #E8403C;
   }
-  }
+}

@@ -1,41 +1,91 @@
-.main-desc{
+.main-desc {
   position: relative;
+  z-index: 2;
   width: 100%;
 
-  &__inner{
+  &__inner {
     position: relative;
+
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
     padding: 60px 0 0 0;
-    display: flex;
-    justify-content: center;
-    align-items:center;
   }
 
-  &__img{
+  &__title{
+    display: flex;
+    justify-content: center;
+    // background-color: #3d3d3d;
+    width: 100%;
+    margin: 0 auto;
+
+  }
+  &__title-img {
     position: relative;
+    width: 100px;
     margin-right: 40px;
   }
 
-  &__img-item{
+  &__title-text {
     position: relative;
-    width: 100px;
+    color: #ffffff;
+
+    font-size: 76px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    margin-right: 40px;
+    text-shadow: rgb(59, 59, 59) 4px 4px 5px;
+ 
   }
 
-  &__list{
+  &__title-degree{
+    position: relative;
+    color: #ffffff;
+    text-shadow: rgb(59, 59, 59) 4px 4px 5px;
+    font-size: 76px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+
+    &::before{
+      content: "";
+      display: inline-block;
+      width: 70px;
+      height: 66px;
+      position: relative;
+      background-image: url('../img/attempt.png');
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: cover;
+    }
+  }
+
+  &__list {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
   }
 
-  &__item{
-    background-color: #3d3d3d;
-    margin-bottom: 20px;
+  &__item {
+    // margin-bottom: 20px;
+    margin-top: 20px;
     text-align: center;
+
+    // background-color: #3d3d3d;
+
+    &:not(:last-child){
+
+    }
   }
 
-  &__item-text{
-    font-size: 36px;
-    color: #fcfcfc;
+  &__item-text {
     padding: 10px 40px;
+
+    color: #595891;
+    font-weight: 700;
+    text-shadow: rgb(255, 255, 255) 2px 2px 1px;
+    font-size: 60px;
+    font-family: 'Open Sans', sans-serif;
   }
 }
+
+
