@@ -160,7 +160,7 @@ select {
   position: relative;
   width: 100%;
   max-width: 1280px;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
   background-color: #000000;
 }
@@ -242,7 +242,8 @@ select {
 .form {
   position: relative;
   z-index: 2;
-  width: 100%;
+  width: 436px;
+  margin: 0 auto;
 }
 
 .form__inner {
@@ -254,15 +255,19 @@ select {
 }
 
 .form__fieldset {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.form__label {
+  display: block;
+  color: #595891;
+  font-size: 30px;
+  line-height: 70px;
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: white 2px 2px 3px;
 }
 
 .form__input {
@@ -297,8 +302,6 @@ select {
 }
 
 .form__btn {
-  width: 80px;
-  height: 35px;
   cursor: pointer;
   font-size: 18px;
   display: inline-block;
@@ -343,7 +346,7 @@ select {
 
 .main-desc__inner {
   position: relative;
-  padding: 60px 0 0 0;
+  padding: 84px 0 0 0;
 }
 
 .main-desc__title {
@@ -425,7 +428,7 @@ select {
 
 .desc__inner {
   width: 100%;
-  padding: 6px 0 0 0;
+  padding: 40px 0 65px 0;
 }
 
 .desc__list {

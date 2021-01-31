@@ -1,7 +1,8 @@
 .form {
   position: relative;
   z-index: 2;
-  width: 100%;
+  width: 436px;
+  margin: 0 auto;
 
   &__inner {
     padding: 60px 0 0 0;
@@ -12,9 +13,22 @@
   }
 
   &__fieldset {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   display: block;
+   position: relative;
+    width: 100%;
+  }
+
+  &__label{
+    display: block;
+    color: #595891;
+    font-size: 30px;
+    line-height: 70px;
+    // color: #88b9d3fe;
+    font-weight: 700;
+    // text-shadow: rgb(0, 0, 0) 2px 2px 1px;
+    font-family: 'Open Sans', sans-serif;
+    // font-weight: 700;
+    text-shadow: rgb(255, 255, 255) 2px 2px 3px;
   }
 
   &__input {
@@ -35,8 +49,7 @@
 
   &__btn {
     // box-sizing: border-box;
-    width: 80px;
-    height: 35px;
+  
 
     cursor: pointer;
 

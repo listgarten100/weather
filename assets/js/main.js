@@ -1,5 +1,14 @@
 const month = 'January,Feb,March,Apr,May,June,July,Aug,Sep,October,Nov,Dec'.split(',');
-const article = document.createElement('div');
+const mainDesc = document.createElement('section');
+const desc = document.createElement('section');
+
+function getMinute(){
+  let minute = new Date().getMinutes();
+  if(minute < 10) {
+    return `0${minute}`;
+  }
+  else return minute;
+}
 class City{
   constructor(city, humidity, pressure, wind, temp, feelLike, cloud, img, parent) {
     this.city = city;
@@ -13,9 +22,8 @@ class City{
     this.parent = document.querySelector(parent);
   }
   render() {
-    article.classList.add('weather-city');
-    article.innerHTML = `<section class="main-desc">
-    <div class="main-desc__inner">
+    mainDesc.classList.add('main-desc');
+    mainDesc.innerHTML = `<div class="main-desc__inner">
       <div class="main-desc__title">
         <img class="main-desc__title-img" src="http://openweathermap.org/img/w/${this.img}.png" alt="weather">
         <p class="main-desc__title-text">${this.city}</p>
@@ -24,10 +32,10 @@ class City{
         <ul class="main-desc__list">
           <li class="main-desc__item"><p class="main-desc__item-text">${new Date().getDate()} ${month[new Date().getMonth()]}</p></li>
         </ul>
-    </div>
-  </section>
-  <section class="desc">
-  <div class="desc__inner">
+    </div>`;
+
+    desc.classList.add('desc');
+    desc.innerHTML = `<div class="desc__inner">
     <div class="desc__list">
       <div class="desc__item">
         <p class="desc__item-text">Humidity: ${this.humidity}%</p>
@@ -35,7 +43,7 @@ class City{
         <p class="desc__item-text">Wind: ${this.wind} km/h SSE</p>
       </div>
       <div class="desc__item">
-        <p class="desc__item-text desc__item-text--min">${new Date().getHours()}:${new Date().getMinutes()}</p>
+        <p class="desc__item-text desc__item-text--min">${new Date().getHours()}:${getMinute()}</p>
       </div>
       <div class="desc__item">
         <p class="desc__item-text">Temp: ${Math.ceil(this.temp)} &#8451;</p>
@@ -43,17 +51,26 @@ class City{
         <p class="desc__item-text">Cloudly: ${this.cloud}%</p>
       </div>
     </div>
-  </div>
-</section>`;
+  </div>`;
 
-  this.parent.append(article);
+  this.parent.append(mainDesc);
+  this.parent.append(desc);
   }
 }
 
 function getData(city = 'KHARKOV') {
-  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=5d066958a60d315387d9492393935c19`)
-  .then(response => response.json())
+fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=5d066958a60d315387d9492393935c19`)
+  .then(response => {
+    if(response.ok) {
+     return response.json();
+    }
+    else {
+      alert('Please type exactly name of the city');
+      getData();
+    }
+  })
   .then(data => {
+    console.log(data);
     new City(
       data.name,
       data.main.humidity,
@@ -63,8 +80,11 @@ function getData(city = 'KHARKOV') {
       data.main.feels_like,
       data.clouds.all,
       data.weather[0].icon,
-      '.article'
-    ).render();
+      '.wrapper'
+    ).render()
+    })
+    .catch(err => {
+      console.warn(err);
     });
 }
 
