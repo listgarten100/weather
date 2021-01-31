@@ -34,7 +34,7 @@ class City{
     mainDesc.classList.add('main-desc');
     mainDesc.innerHTML = `<div class="main-desc__inner">
       <div class="main-desc__title">
-        <img class="main-desc__title-img" src="http://openweathermap.org/img/w/${this.img}.png" alt="weather">
+        <img class="main-desc__title-img" src="https://openweathermap.org/img/w/${this.img}.png" alt="weather">
         <p class="main-desc__title-text">${this.city}</p>
         <p class="main-desc__title-degree">${Math.ceil(this.temp)}&#8451;</p>
       </div>
