@@ -7,14 +7,12 @@
   &__inner {
     width: 100%;
     padding: 40px 0 65px 0;
-    // margin-bottom: 60px;
   }
 
   &__list {
     display: flex;
     align-items: center;
     flex-direction: row;
-    // flex-wrap: wrap;
     justify-content: center;
 
     height: 240px;
@@ -22,7 +20,6 @@
 
   &__item {
     width: 320px;
-    // margin-bottom: 20px;
 
     text-align: center;
   }
@@ -46,5 +43,67 @@
     font-family: "Open Sans", sans-serif;
     font-size: 100px;
     font-weight: 700;
+  }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 882px) {
+  .desc {
+    &__item {
+      width: 240px;
+    }
+    &__item-text {
+      font-size: 20px;
+    }
+
+    &__item-text--min {
+      font-size: 70px;
+    }
+  }
+}
+
+@media (min-width: 599px) and (max-width: 768px) {
+  .desc {
+    &__item {
+      width: 180px;
+    }
+    &__item-text {
+      font-size: 20px;
+    }
+
+    &__item-text span {
+      display: block;
+
+      margin-bottom: 10px;
+    }
+    &__item-text--min {
+      padding: 0;
+
+      font-size: 50px;
+    }
+  }
+}
+
+
+@media (max-width: 598px) {
+  .desc {
+    &__list {
+      flex-direction: column;
+
+      height: 100%;
+    }
+
+    &__item {
+      width: 300px;
+    }
+    &__item-text {
+      font-size: 25px;
+    }
+
+
+    &__item-text--min {
+      display: none;
+    }
   }
 }

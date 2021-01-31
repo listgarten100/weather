@@ -63,7 +63,7 @@
     }
   }
 
-  &__list {
+  &__item {
     display: flex;
     justify-content: center;
 
@@ -78,5 +78,95 @@
     font-family: "Open Sans", sans-serif;
     font-size: 60px;
     font-weight: 700;
+  }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 882px) {
+  .main-desc {
+    &__title-text {
+      font-size: 66px;
+    }
+
+    &__title-degree {
+      font-size: 66px;
+
+      &::before {
+        height: 64px;
+      }
+    }
+
+    &__item-text {
+      font-size: 52px;
+    }
+  }
+}
+
+@media (min-width: 599px) and (max-width: 768px) {
+  .main-desc {
+    &__inner {
+      padding-top: 60px;
+    }
+
+    &__title {
+      align-items: center;
+      flex-direction: column;
+    }
+    &__title-img {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    &__title-text {
+      margin-right: 0;
+      margin-bottom: 40px;
+
+      font-size: 56px;
+    }
+
+    &__item-text {
+      margin-top: 20px;
+      margin-bottom: 40px;
+
+      font-size: 46px;
+    }
+  }
+}
+
+
+@media (max-width: 598px) {
+  .main-desc {
+    &__inner {
+      display: flex;
+      flex-direction: column;
+
+      padding-top: 60px;
+    }
+
+    &__title {
+      align-items: center;
+      flex-direction: column;
+    }
+    &__title-img {
+      margin: 0;
+    }
+
+    &__title-text {
+      margin-right: 0;
+      margin-bottom: 40px;
+
+      font-size: 56px;
+    }
+
+    &__item-text {
+      margin-bottom: 40px;
+
+      font-size: 46px;
+    }
+
+    &__item {
+      margin-top: 40px;
+    }
   }
 }

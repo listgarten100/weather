@@ -30,3 +30,21 @@
     color: #e8403c;
   }
 }
+
+
+@media (min-width: 599px) and (max-width: 768px) {
+  .header {
+    &__logo-text {
+      font-size: 80px;
+    }
+  }
+}
+
+
+@media (max-width: 598px) {
+  .header {
+    &__logo-text {
+      font-size: 52px;
+    }
+  }
+}

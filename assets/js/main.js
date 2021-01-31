@@ -38,7 +38,7 @@ class City{
         <p class="main-desc__title-text">${this.city}</p>
         <p class="main-desc__title-degree">${Math.ceil(this.temp)}&#8451;</p>
       </div>
-        <div class="main-desc__list">
+        <div class="main-desc__item">
           <p class="main-desc__item-text">${new Date().getDate()} ${actualMonth}</p>
         </div>
     </div>`;

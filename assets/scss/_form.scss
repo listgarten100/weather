@@ -93,3 +93,33 @@
     }
   }
 }
+
+
+
+@media (max-width: 598px) {
+  .form {
+    width: 100%;
+
+    &__inner {
+      width: 100%;
+    }
+
+    &__item {
+      width: 100%;
+    }
+    &__fieldset {
+      width: 300px;
+      margin: 0 auto;
+
+      text-align: center;
+    }
+    &__list {
+      flex-direction: column;
+    }
+
+    &__input {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+}
