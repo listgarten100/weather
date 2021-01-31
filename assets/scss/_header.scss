@@ -1,6 +1,7 @@
 .header {
   position: relative;
   z-index: 2;
+
   width: 100%;
 
   &__inner {
@@ -18,13 +19,14 @@
     text-transform: uppercase;
 
     color: #88b9d3fe;
-    font-family: 'Roboto', sans-serif;
     text-shadow: rgb(59, 59, 59) 4px 4px 5px;
+
+    font-family: "Roboto", sans-serif;
     font-size: 100px;
     font-weight: 700;
   }
 
   &__logo-text--orange {
-    color: #E8403C;
+    color: #e8403c;
   }
 }

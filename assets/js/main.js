@@ -1,14 +1,23 @@
-const month = 'January,Feb,March,Apr,May,June,July,Aug,Sep,October,Nov,Dec'.split(',');
+const month = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const mainDesc = document.createElement('section');
 const desc = document.createElement('section');
+let actualMinute = '';
+let actualMonth = '';
 
-function getMinute(){
+(function getActualMinute(){
   let minute = new Date().getMinutes();
-  if(minute < 10) {
-    return `0${minute}`;
-  }
-  else return minute;
-}
+  if(minute < 10) actualMinute = '0' + minute;
+  else actualMinute = minute;
+  return actualMinute;
+}());
+
+(function getActualMonth(){
+  let monthNumber = new Date().getMonth();
+  actualMonth = month[monthNumber];
+  return actualMonth;
+}());
+
+
 class City{
   constructor(city, humidity, pressure, wind, temp, feelLike, cloud, img, parent) {
     this.city = city;
@@ -29,28 +38,28 @@ class City{
         <p class="main-desc__title-text">${this.city}</p>
         <p class="main-desc__title-degree">${Math.ceil(this.temp)}&#8451;</p>
       </div>
-        <ul class="main-desc__list">
-          <li class="main-desc__item"><p class="main-desc__item-text">${new Date().getDate()} ${month[new Date().getMonth()]}</p></li>
-        </ul>
+        <div class="main-desc__list">
+          <p class="main-desc__item-text">${new Date().getDate()} ${actualMonth}</p>
+        </div>
     </div>`;
 
     desc.classList.add('desc');
     desc.innerHTML = `<div class="desc__inner">
-    <div class="desc__list">
-      <div class="desc__item">
+    <ul class="desc__list">
+      <li class="desc__item">
         <p class="desc__item-text">Humidity: ${this.humidity}%</p>
         <p class="desc__item-text">Pressure: ${this.pressure} hPa</p>
         <p class="desc__item-text">Wind: ${this.wind} km/h SSE</p>
-      </div>
-      <div class="desc__item">
-        <p class="desc__item-text desc__item-text--min">${new Date().getHours()}:${getMinute()}</p>
-      </div>
-      <div class="desc__item">
+      </li>
+      <li class="desc__item">
+        <p class="desc__item-text desc__item-text--min">${new Date().getHours()}:${actualMinute}</p>
+      </li>
+      <li class="desc__item">
         <p class="desc__item-text">Temp: ${Math.ceil(this.temp)} &#8451;</p>
         <p class="desc__item-text">Feel like: ${Math.ceil(this.feelLike)} &#8451;</p>
         <p class="desc__item-text">Cloudly: ${this.cloud}%</p>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>`;
 
   this.parent.append(mainDesc);
@@ -81,7 +90,7 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APP
       data.clouds.all,
       data.weather[0].icon,
       '.wrapper'
-    ).render()
+    ).render();
     })
     .catch(err => {
       console.warn(err);
@@ -96,16 +105,14 @@ const input = form.elements['text'];
 form.addEventListener('submit', onSubmitFormHandler);
 
 
-  
-  
-
 function onSubmitFormHandler(e){
   e.preventDefault();
   if(input.value === ''){
     alert('Please, enter the city');
     return;
   }
-  article.remove();
+  mainDesc.remove();
+  desc.remove();
   cityTitle = input.value.toUpperCase();
   form.reset();
   getData(cityTitle);
@@ -113,48 +120,3 @@ function onSubmitFormHandler(e){
 
 
 
-
-
-// <section class="main-desc">
-//     <div class="main-desc__inner">
-//       <div class="main-desc__img">
-//         <img class="main-desc__img-item" src="http://openweathermap.org/img/w/${this.img}.png" alt="weather">
-//         <p class="main-desc__item-text">${this.city}</p>
-//       </div>
-//         <ul class="main-desc__list">
-//           <li class="main-desc__item"><p class="main-desc__item-text">${this.city}</p></li>
-//           <li class="main-desc__item"><p class="main-desc__item-text">${new Date().getDate()} ${month[new Date().getMonth()]}</p></li>
-//           <li class="main-desc__item"><p class="main-desc__item-text">${new Date().getHours()}:${new Date().getMinutes()}</p></li>
-//         </ul>
-//     </div>
-//   </section>
-//   <section class="desc">
-//     <div class="desc__inner">
-//       <ul class="desc__list">
-//         <li class="desc__item"><p class="desc__item-text">Humidity: ${this.humidity}%</p></li>
-//         <li class="desc__item"><p class="desc__item-text">Pressure: ${this.pressure} hPa</p></li>
-//         <li class="desc__item"><p class="desc__item-text">Wind: ${this.wind} km/h SSE</p></li>
-//         <li class="desc__item"><p class="desc__item-text">Temp: ${Math.ceil(this.temp)} &#8451;</p></li>
-//         <li class="desc__item"><p class="desc__item-text">Feel like: ${Math.ceil(this.feelLike)} &#8451;</p></li>
-//         <li class="desc__item"><p class="desc__item-text">Cloudly: ${this.cloud}%</p></li>
-//       </ul>
-//     </div>
-//   </section>
-
-
-/* <li class="desc__item"><p class="desc__item-text--min">${new Date().getHours()}:${new Date().getMinutes()}</p></li> */
-
-
-/* <section class="desc">
-    <div class="desc__inner">
-      <ul class="desc__list">
-        <li class="desc__item"><p class="desc__item-text">Humidity: ${this.humidity}%</p></li>
-        <li class="desc__item"><p class="desc__item-text">Pressure: ${this.pressure} hPa</p></li>
-        <li class="desc__item"><p class="desc__item-text">Wind: ${this.wind} km/h SSE</p></li>
-      
-        <li class="desc__item"><p class="desc__item-text">Temp: ${Math.ceil(this.temp)} &#8451;</p></li>
-        <li class="desc__item"><p class="desc__item-text">Feel like: ${Math.ceil(this.feelLike)} &#8451;</p></li>
-        <li class="desc__item"><p class="desc__item-text">Cloudly: ${this.cloud}%</p></li>
-      </ul>
-    </div>
-  </section> */

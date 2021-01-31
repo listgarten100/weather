@@ -1,61 +1,64 @@
 .main-desc {
   position: relative;
   z-index: 2;
+
   width: 100%;
 
   &__inner {
     position: relative;
 
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-
     padding: 84px 0 0 0;
   }
 
-  &__title{
+  &__title {
     display: flex;
     justify-content: center;
-    // background-color: #3d3d3d;
+
     width: 100%;
     margin: 0 auto;
-
   }
   &__title-img {
     position: relative;
+
     width: 100px;
     margin-right: 40px;
   }
 
   &__title-text {
     position: relative;
-    color: #ffffff;
 
-    font-size: 76px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
     margin-right: 40px;
+
+    color: #ffffff;
     text-shadow: rgb(59, 59, 59) 4px 4px 5px;
- 
+
+    font-family: "Open Sans", sans-serif;
+    font-size: 76px;
+    font-weight: 700;
   }
 
-  &__title-degree{
+  &__title-degree {
     position: relative;
+
     color: #ffffff;
     text-shadow: rgb(59, 59, 59) 4px 4px 5px;
+
+    font-family: "Open Sans", sans-serif;
     font-size: 76px;
-    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
 
-    &::before{
-      content: "";
+    &::before {
+      position: relative;
+
       display: inline-block;
+
       width: 70px;
       height: 66px;
-      position: relative;
-      background-image: url('../img/attempt.png');
+
+      content: "";
+
+      background-image: url("../img/attempt.png");
       background-repeat: no-repeat;
-      background-position: bottom;
       background-size: cover;
     }
   }
@@ -63,29 +66,17 @@
   &__list {
     display: flex;
     justify-content: center;
-  }
 
-  &__item {
-    // margin-bottom: 20px;
     margin-top: 20px;
-    text-align: center;
-
-    // background-color: #3d3d3d;
-
-    &:not(:last-child){
-
-    }
   }
+
 
   &__item-text {
-    padding: 10px 40px;
-
     color: #595891;
-    font-weight: 700;
     text-shadow: rgb(255, 255, 255) 2px 2px 1px;
+
+    font-family: "Open Sans", sans-serif;
     font-size: 60px;
-    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
   }
 }
-
-

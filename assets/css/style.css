@@ -266,11 +266,21 @@ select {
   font-size: 30px;
   line-height: 70px;
   font-weight: 700;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-shadow: white 2px 2px 3px;
 }
 
+.form__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .form__input {
+  display: inline-block;
   width: 280px;
   height: 35px;
   margin-right: 20px;
@@ -303,7 +313,6 @@ select {
 
 .form__btn {
   cursor: pointer;
-  font-size: 18px;
   display: inline-block;
   width: 115px;
   height: 35px;
@@ -312,7 +321,6 @@ select {
   text-align: center;
   text-decoration: none;
   text-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 -1px rgba(0, 0, 0, 0.8);
-  outline: none;
   border: none;
   border-radius: 100px;
   background: #595891 -o-radial-gradient(50% 5px, 150% 100%, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
@@ -320,10 +328,6 @@ select {
   -webkit-box-shadow: inset rgba(0, 0, 0, 0.6) 0 -2px 5px, inset rgba(252, 255, 255, 0.7) 0 2px 5px, rgba(0, 0, 0, 0.8) 0 2px 5px -1px;
           box-shadow: inset rgba(0, 0, 0, 0.6) 0 -2px 5px, inset rgba(252, 255, 255, 0.7) 0 2px 5px, rgba(0, 0, 0, 0.8) 0 2px 5px -1px;
   color: #fff;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
 .form__btn:hover {
@@ -393,7 +397,6 @@ select {
   position: relative;
   background-image: url("../img/attempt.png");
   background-repeat: no-repeat;
-  background-position: bottom;
   background-size: cover;
 }
 
@@ -404,15 +407,10 @@ select {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.main-desc__item {
   margin-top: 20px;
-  text-align: center;
 }
 
 .main-desc__item-text {
-  padding: 10px 40px;
   color: #595891;
   font-weight: 700;
   text-shadow: white 2px 2px 1px;

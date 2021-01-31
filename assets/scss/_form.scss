@@ -1,6 +1,7 @@
 .form {
   position: relative;
   z-index: 2;
+
   width: 436px;
   margin: 0 auto;
 
@@ -13,75 +14,82 @@
   }
 
   &__fieldset {
-   display: block;
-   position: relative;
+    position: relative;
+
+    display: block;
+
     width: 100%;
   }
 
-  &__label{
+  &__label {
     display: block;
+
     color: #595891;
-    font-size: 30px;
-    line-height: 70px;
-    // color: #88b9d3fe;
-    font-weight: 700;
-    // text-shadow: rgb(0, 0, 0) 2px 2px 1px;
-    font-family: 'Open Sans', sans-serif;
-    // font-weight: 700;
     text-shadow: rgb(255, 255, 255) 2px 2px 3px;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 70px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
   }
 
   &__input {
-    // box-sizing: border-box;
+    display: inline-block;
+
     width: 280px;
     height: 35px;
     margin-right: 20px;
     padding: 0 0 0 12px;
+
+    color: #595891;
     border: 2px solid #595891;
     background-color: #dfecf3fe;
-    color: #595891;
+
     font-size: 18px;
 
-    &::placeholder{
+    &::placeholder {
       color: #595891;
     }
   }
 
   &__btn {
-    // box-sizing: border-box;
-  
-
-    cursor: pointer;
-
-    font-size: 18px;
     display: inline-block;
+
     width: 115px;
     height: 35px;
-    line-height: 15px;
-    font-size: 20px;
+
+    cursor: pointer;
     text-align: center;
     text-decoration: none;
-    text-shadow: 0 1px rgba(255,255,255,.2), 0 -1px rgba(0,0,0,.8);
-    outline: none;
+
+    color: #ffffff;
     border: none;
     border-radius: 100px;
-    background: #595891 radial-gradient(150% 100% at 50% 5px, rgba(255,255,255,.2), rgba(0,0,0,0));
-    box-shadow: inset rgba(0,0,0,.6) 0 -2px 5px, inset rgba(252,255,255,.7) 0 2px 5px, rgba(0,0,0,.8) 0 2px 5px -1px;
-    color:#fff;
-    user-select: none;
-  
-  &:hover {
-    color: rgb(128,207,214);
-    cursor: pointer;
-  }
-  &:active {
-    padding-bottom: 1px;
-    box-shadow:
-     inset rgba(0,0,0,1) 0 1px 3px,
-     inset rgba(0,0,0,.6) 0 -2px 5px,
-     inset rgba(252,255,255,.7) 0 2px 5px,
-     0 1px rgba(255,255,255,.08);
-    color: rgb(109, 154, 161);
-  }
+    background: #595891 radial-gradient(150% 100% at 50% 5px, rgba(255,255,255,0.2), rgba(0,0,0,0));
+    box-shadow: inset rgba(0,0,0,0.6) 0 -2px 5px, inset rgba(252,255,255,0.7) 0 2px 5px, rgba(0,0,0,0.8) 0 2px 5px -1px;
+    text-shadow: 0 1px rgba(255,255,255,0.2), 0 -1px rgba(0,0,0,0.8);
+
+    font-size: 20px;
+    line-height: 15px;
+
+    &:hover {
+      cursor: pointer;
+
+      color: rgb(128,207,214);
+    }
+    &:active {
+      padding-bottom: 1px;
+
+      color: rgb(109, 154, 161);
+      box-shadow: inset rgba(0,0,0,1) 0 1px 3px,
+      inset rgba(0,0,0,0.6) 0 -2px 5px,
+      inset rgba(252,255,255,0.7) 0 2px 5px,
+      0 1px rgba(255,255,255,0.08);
+    }
   }
 }
