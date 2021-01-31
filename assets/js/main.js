@@ -47,17 +47,17 @@ class City{
     desc.innerHTML = `<div class="desc__inner">
     <ul class="desc__list">
       <li class="desc__item">
-        <p class="desc__item-text">Humidity: ${this.humidity}%</p>
-        <p class="desc__item-text">Pressure: ${this.pressure} hPa</p>
-        <p class="desc__item-text">Wind: ${this.wind} km/h SSE</p>
+        <p class="desc__item-text"><span>Humidity:</span> ${this.humidity}%</p>
+        <p class="desc__item-text"><span>Pressure:</span> ${this.pressure} hPa</p>
+        <p class="desc__item-text"><span>Wind:</span> ${this.wind} km/h SSE</p>
       </li>
       <li class="desc__item">
         <p class="desc__item-text desc__item-text--min">${new Date().getHours()}:${actualMinute}</p>
       </li>
       <li class="desc__item">
-        <p class="desc__item-text">Temp: ${Math.ceil(this.temp)} &#8451;</p>
-        <p class="desc__item-text">Feel like: ${Math.ceil(this.feelLike)} &#8451;</p>
-        <p class="desc__item-text">Cloudly: ${this.cloud}%</p>
+        <p class="desc__item-text"><span>Temp:</span> ${Math.ceil(this.temp)} &#8451;</p>
+        <p class="desc__item-text"><span>Feel like:</span> ${Math.ceil(this.feelLike)} &#8451;</p>
+        <p class="desc__item-text"><span>Cloudly:</span> ${this.cloud}%</p>
       </li>
     </ul>
   </div>`;
